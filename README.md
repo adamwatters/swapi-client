@@ -1,19 +1,20 @@
-#MercuryWorks Challenge: SWAPI Client
+# MercuryWorks Challenge: SWAPI Client
 
-##Requirements
+## Requirements
 
-[X] Show first 10 people
-[X] Name
-[X] Height
-[X] Mass
-[X] Gender
-[-] Species (UI working, but not hitting API for species information)
-[X] Search by name
-[X] Search loading
-[X] Search result looks like default list
-[X] Empty State with warning icon
+- [x] Show first 10 people
+- [x] Name
+- [x] Height
+- [x] Mass
+- [x] Gender
+- [ ] Species (UI working, but not hitting API for species information)
+- [x] Search by name
+- [x] Search loading
+- [x] Search result looks like default list
+- [x] Empty State with warning icon
 
 ##Extra Credit
-[0] Sort Alphabetically
-[-] Pagination (store implementation can fetch by page)
-[0] Number of results
+
+- [ ] Sort Alphabetically
+- [ ] Pagination (store implementation can fetch by page)
+- [ ] Number of results
