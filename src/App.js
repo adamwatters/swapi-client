@@ -6,6 +6,12 @@ const fetchAndUnpack = url => {
   return fetch(url).then(response => response.json());
 };
 
+// TODO: fetch species
+const SPECIES_FROM_URL = {
+  "https://swapi.co/api/species/1/": "human",
+  "https://swapi.co/api/species/2/": "droid"
+};
+
 const ICON_CLASSES = {
   droid: "fas fa-android",
   human: "fas fa-user-circle",
@@ -24,7 +30,8 @@ class Store extends Component {
   constructor() {
     super();
     this.state = {
-      species: {},
+      // TODO: fetch an cache species
+      // species: {},
       searches: {},
       pages: {},
       page: 1,
@@ -40,6 +47,7 @@ class Store extends Component {
     if (!this.state.pages[page]) {
       this.setState({ pages: { ...this.state.pages, [page]: "LOADING" } });
       const newPage = await fetchAndUnpack(`${ROOT_URL}?page=${page}`);
+      // TODO: follow this by fetching species
       this.setState({
         pages: { ...this.state.pages, [page]: newPage.results }
       });
@@ -52,6 +60,7 @@ class Store extends Component {
         searches: { ...this.state.searches, [search]: "LOADING" }
       });
       const newSearch = await fetchAndUnpack(`${ROOT_URL}?search=${search}`);
+      // TODO: follow this by fetching species
       this.setState({
         searches: { ...this.state.searches, [search]: newSearch.results }
       });
@@ -66,10 +75,8 @@ class Store extends Component {
 const List = ({ people }) => (
   <>
     {people.map(person => {
-      // basic style - need to implement API to get species
-      console.log(person.species);
-      const iconClass = `${ICON_CLASSES[person.species] ||
-        ICON_CLASSES.warning}`;
+      const species = SPECIES_FROM_URL[person.species];
+      const iconClass = species ? ICON_CLASSES[species] : ICON_CLASSES.warning;
       return (
         <div key={person.url} className="item">
           <div className="name">
