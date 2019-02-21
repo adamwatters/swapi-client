@@ -1,14 +1,73 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Titillium Web";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.item {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.item:nth-child(even) {
+  background: rgb(238, 238, 238);
+}
+.item:nth-child(odd) {
+  background: rgb(255, 255, 255);
+}
+.icon {
+  font-family: "FontAwesome";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+.icon::before {
+  width: 24px;
+  height: 24px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: lighter;
+  display: flex;
+  align-content: center;
+}
+.stats {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.stats-divider {
+  width: 4px;
+  height: 4px;
+  margin: 4px;
+  background-color: rgb(0, 0, 0);
 }
