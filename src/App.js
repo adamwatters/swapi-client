@@ -7,10 +7,10 @@ const fetchAndUnpack = url => {
 };
 
 const ICON_CLASSES = {
-  droid: "fa-android",
-  human: "fa-user-circle",
-  warning: "fa-exclamation-triangle",
-  loading: "fa-spinner"
+  droid: "fas fa-android",
+  human: "fas fa-user-circle",
+  warning: "fas fa-exclamation-triangle",
+  loading: "fas fa-spinner fa-spin"
 };
 
 class Store extends Component {
@@ -68,7 +68,7 @@ const List = ({ people }) => (
     {people.map(person => {
       // basic style - need to implement API to get species
       console.log(person.species);
-      const iconClass = `fas ${ICON_CLASSES[person.species] ||
+      const iconClass = `${ICON_CLASSES[person.species] ||
         ICON_CLASSES.warning}`;
       return (
         <div key={person.url} className="item">
@@ -108,7 +108,7 @@ const View = ({ page, search, pages, searches, changeSearch }) => {
       </div>
       <div className="list-container">
         {!people || people === "LOADING" ? (
-          "LOADING"
+          <div className={`loader ${ICON_CLASSES.loading}`} />
         ) : people.length === 0 ? (
           <div className="item">
             <div className="name">

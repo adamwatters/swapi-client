@@ -36,7 +36,7 @@ code {
   border-bottom: 1rem solid rgb(209, 209, 209);
 }
 
-.list {
+.list-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -54,6 +54,20 @@ code {
 .item:nth-child(odd) {
   background: rgb(255, 255, 255);
 }
+
+.loader {
+  font-family: "FontAwesome";
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem;
+  flex: 0 0 0;
+  align-self: center;
+}
+
+.loader::before {
+  font-size: 10rem;
+}
+
 .icon {
   font-family: "FontAwesome";
   display: flex;
