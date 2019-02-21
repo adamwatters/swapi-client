@@ -1,5 +1,7 @@
 # MercuryWorks Challenge: SWAPI Client
 
+## [Demo](https://focused-bartik-3cc2f5.netlify.com/)
+
 ## Requirements
 
 - [x] Show first 10 people
